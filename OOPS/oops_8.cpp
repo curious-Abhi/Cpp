@@ -3,7 +3,6 @@
 #include<iostream>
 using namespace std;
 
-
 class Car {        // The class
   public:          // Access specifier
     string brand;  // Attribute
