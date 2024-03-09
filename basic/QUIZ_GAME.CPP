@@ -27,7 +27,8 @@ int main()
         "20. What are templates in C++?",
         "21. What is the 'auto' keyword used for in C++11?",
         "22. What are smart pointers in C++?",
-        "23. What is the purpose of 'nullptr' keyword in C++11?"};
+        "23. What is the purpose of 'nullptr' keyword in C++11?"
+    };
 
     string options[][4] = {
         {"A. C Plus Plus", "B. Object Oriented", "C. C is procedural, C++ is object-oriented", "D. C++ is an older version of C"},
@@ -52,26 +53,44 @@ int main()
         {"A. They are used for type-safe generic programming", "B. They are used for error handling", "C. They are used for input/output operations", "D. They are used for loop iteration"},
         {"A. It is used for type deduction", "B. It is used for automatic memory allocation", "C. It is used for dynamic memory allocation", "D. It is used for loop iteration"},
         {"A. They are pointers that automatically deallocate memory", "B. They are pointers used for pointer arithmetic", "C. They are used for dynamic memory allocation", "D. They are used for type casting"},
-        {"A. It is used to indicate a null pointer", "B. It is used for type conversion", "C. It is used for loop iteration", "D. It is used for automatic memory allocation"}};
+        {"A. It is used to indicate a null pointer", "B. It is used for type conversion", "C. It is used for loop iteration", "D. It is used for automatic memory allocation"}
+    };
 
     char answer_key[] = {'C', 'A', 'B', 'A', 'C', 'A', 'B', 'A', 'A', 'A', 'A', 'B', 'A', 'A', 'B', 'A', 'A', 'A', 'A', 'A', 'B', 'A', 'A'};
-
     int size = sizeof(questions) / sizeof(questions[0]);
     char guess;
-    int score;
+    int score = 0;
 
     for (int i = 0; i < size; i++)
     {
         cout << "**********************************\n";
-
         cout << questions[i] << "\n";
-
         cout << "**********************************\n";
         for (int j = 0; j < sizeof(options[i]) / sizeof(options[i][0]); j++)
         {
             cout << options[i][j] << '\n';
         }
+        cout << "Enter your answer (A/B/C/D): ";
+        cin >> guess;
+        guess = toupper(guess);
+        if (guess == answer_key[i])
+        {
+            cout << "CORRECT\n";
+            score++;
+        }
+        else
+        {
+            cout << "WRONG!\n";
+            cout << "ANSWER: " << answer_key[i] << endl;
+        }
+        
     }
+    cout << "**********************************\n";
+    cout << "*           RESULT            ****\n";
+    cout << "**********************************\n";
+    cout << "CORRECT ANSWER: " << score << '\n';
+    cout << "# of question: " << size << '\n';
+    cout << "SCORE: " << (score / (double)size) * 100 << "%";
 
     return 0;
 }
