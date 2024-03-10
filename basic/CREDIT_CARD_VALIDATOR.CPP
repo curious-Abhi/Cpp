@@ -42,7 +42,7 @@ bool isvalidcreditcardnumber(const string &cardnumber)
             digit = digit % 10 + digit / 10;
         }
         sum += digit; // sum all digits together
-        isSecondDigit = !isSecondDigit;
+        isSecondDigit = !isSecondDigit;// Toggle flag for every iteration to identify every second digit
     }
     return (sum % 10 == 0);
 }
