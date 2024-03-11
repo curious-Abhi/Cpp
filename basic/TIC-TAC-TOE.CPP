@@ -36,7 +36,7 @@ int main() {
             break;
         }
     }
-    //cout<<"Thanks for playing!";
+    cout<<"Thanks for playing!";
     return 0;
 }
 
